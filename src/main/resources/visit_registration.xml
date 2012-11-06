@@ -1,11 +1,11 @@
-<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:h="http://www.w3.org/1999/xhtml"
-    xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-    xmlns:jr="http://openrosa.org/javarosa">
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
     <h:head>
         <h:title>Visit Registration</h:title>
         <model>
             <instance>
                 <data id="visit_registration">
+                    <visitId />
                     <fieldWorkerId />
                     <locationId />
                     <roundNumber />
@@ -14,6 +14,12 @@
             </instance>
             <itext>
                 <translation lang="eng">
+                    <text id="/data/visitId:label">
+                        <value>Visit Id</value>
+                    </text>
+                    <text id="/data/visitId:hint">
+                        <value />
+                    </text>
                     <text id="/data/fieldWorkerId:label">
                         <value>Field Worker Id</value>
                     </text>
@@ -40,14 +46,18 @@
                     </text>
                 </translation>
             </itext>
+            <bind nodeset="/data/visitId" type="string" required="true()" />
             <bind nodeset="/data/fieldWorkerId" type="string" required="true()" />
             <bind nodeset="/data/locationId" type="string" required="true()" />
-            <bind nodeset="/data/roundNumber" type="int" required="true()"
-                constraint="(. &gt; 1 and . &lt; 20)" />
+            <bind nodeset="/data/roundNumber" type="int" required="true()" constraint="(. &gt; 1 and . &lt; 20)" />
             <bind nodeset="/data/visitDate" type="date" required="true()" />
         </model>
     </h:head>
     <h:body>
+        <input ref="/data/visitId">
+            <label ref="jr:itext('/data/visitId:label')" />
+            <hint ref="jr:itext('/data/visitId:hint')" />
+        </input>
         <input ref="/data/fieldWorkerId">
             <label ref="jr:itext('/data/fieldWorkerId:label')" />
             <hint ref="jr:itext('/data/fieldWorkerId:hint')" />
