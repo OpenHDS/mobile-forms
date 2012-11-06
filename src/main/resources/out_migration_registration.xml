@@ -1,0 +1,92 @@
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:jr="http://openrosa.org/javarosa">
+    <h:head>
+        <h:title>Out Migration Registration</h:title>
+        <model>
+            <instance>
+                <data id="out_migration_registration">
+                    <individualId />
+                    <fieldWorkerId />
+                    <visitId />
+                    <dateOfMigration />
+                    <nameOfDestination />
+                    <reasonForOutMigration />
+                </data>
+            </instance>
+            <itext>
+                <translation lang="eng">
+                    <text id="/data/individualId:label">
+                        <value>Individual Id</value>
+                    </text>
+                    <text id="/data/individualId:hint">
+                        <value />
+                    </text>
+                    <text id="/data/fieldWorkerId:label">
+                        <value>Field Worker Id</value>
+                    </text>
+                    <text id="/data/fieldWorkerId:hint">
+                        <value />
+                    </text>
+                    <text id="/data/visitId:label">
+                        <value>Visit Id</value>
+                    </text>
+                    <text id="/data/visitId:hint">
+                        <value />
+                    </text>
+                    <text id="/data/dateOfMigration:label">
+                        <value>Date of Migration</value>
+                    </text>
+                    <text id="/data/dateOfMigration:hint">
+                        <value />
+                    </text>
+                    <text id="/data/nameOfDestination:label">
+                        <value>Name of Destination</value>
+                    </text>
+                    <text id="/data/nameOfDestination:hint">
+                        <value />
+                    </text>
+                    <text id="/data/reasonForOutMigration:label">
+                        <value>Reason for Out Migration</value>
+                    </text>
+                    <text id="/data/reasonForOutMigration:hint">
+                        <value />
+                    </text>
+                </translation>
+            </itext>
+            <bind nodeset="/data/individualId" type="string" required="true()" />
+            <bind nodeset="/data/fieldWorkerId" type="string" required="true()" />
+            <bind nodeset="/data/visitId" type="string" required="true()" />
+            <bind nodeset="/data/dateOfMigration" type="date" />
+            <bind nodeset="/data/nameOfDestination" type="string" required="true()" />
+            <bind nodeset="/data/reasonForOutMigration" type="string"
+                required="true()" />
+        </model>
+    </h:head>
+    <h:body>
+        <input ref="/data/individualId">
+            <label ref="jr:itext('/data/individualId:label')" />
+            <hint ref="jr:itext('/data/individualId:hint')" />
+        </input>
+        <input ref="/data/fieldWorkerId">
+            <label ref="jr:itext('/data/fieldWorkerId:label')" />
+            <hint ref="jr:itext('/data/fieldWorkerId:hint')" />
+        </input>
+        <input ref="/data/visitId">
+            <label ref="jr:itext('/data/visitId:label')" />
+            <hint ref="jr:itext('/data/visitId:hint')" />
+        </input>
+        <input ref="/data/dateOfMigration">
+            <label ref="jr:itext('/data/dateOfMigration:label')" />
+            <hint ref="jr:itext('/data/dateOfMigration:hint')" />
+        </input>
+        <input ref="/data/nameOfDestination">
+            <label ref="jr:itext('/data/nameOfDestination:label')" />
+            <hint ref="jr:itext('/data/nameOfDestination:hint')" />
+        </input>
+        <input ref="/data/reasonForOutMigration">
+            <label ref="jr:itext('/data/reasonForOutMigration:label')" />
+            <hint ref="jr:itext('/data/reasonForOutMigration:hint')" />
+        </input>
+    </h:body>
+</h:html>

@@ -1,0 +1,142 @@
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:jr="http://openrosa.org/javarosa">
+    <h:head>
+        <h:title>Membership</h:title>
+        <model>
+            <instance>
+                <data id="membership">
+                    <individualId />
+                    <socialGroupId />
+                    <fieldWorkerId />
+                    <relationshipToGroupHead />
+                    <startDate />
+                </data>
+            </instance>
+            <itext>
+                <translation lang="eng">
+                    <text id="/data/individualId:label">
+                        <value>Individual Id</value>
+                    </text>
+                    <text id="/data/individualId:hint">
+                        <value />
+                    </text>
+                    <text id="/data/socialGroupId:label">
+                        <value>Social Group Id</value>
+                    </text>
+                    <text id="/data/socialGroupId:hint">
+                        <value></value>
+                    </text>
+                    <text id="/data/fieldWorkerId:label">
+                        <value>Field Worker Id</value>
+                    </text>
+                    <text id="/data/fieldWorkerId:hint">
+                        <value />
+                    </text>
+                    <text id="/data/relationshipToGroupHead:label">
+                        <value>Relationship to Group Head</value>
+                    </text>
+                    <text id="/data/relationshipToGroupHead:hint">
+                        <value />
+                    </text>
+                    <text id="/data/relationshipToGroupHead:option0">
+                        <value>Head</value>
+                    </text>
+                    <text id="/data/relationshipToGroupHead:option1">
+                        <value>Spouse</value>
+                    </text>
+                    <text id="/data/relationshipToGroupHead:option2">
+                        <value>Son/Daughter</value>
+                    </text>
+                    <text id="/data/relationshipToGroupHead:option3">
+                        <value>Brother/Sister</value>
+                    </text>
+                    <text id="/data/relationshipToGroupHead:option4">
+                        <value>Parent</value>
+                    </text>
+                    <text id="/data/relationshipToGroupHead:option5">
+                        <value>Grandchild</value>
+                    </text>
+                    <text id="/data/relationshipToGroupHead:option6">
+                        <value>Not Related</value>
+                    </text>
+                    <text id="/data/relationshipToGroupHead:option7">
+                        <value>Other Relative</value>
+                    </text>
+                    <text id="/data/relationshipToGroupHead:option8">
+                        <value>Don't Know</value>
+                    </text>
+                    <text id="/data/startDate:label">
+                        <value>Start Date</value>
+                    </text>
+                    <text id="/data/startDate:hint">
+                        <value />
+                    </text>
+                </translation>
+            </itext>
+            <bind nodeset="/data/individualId" type="string" required="true()" />
+            <bind nodeset="/data/socialGroupId" type="string" required="true()" />
+            <bind nodeset="/data/fieldWorkerId" type="string" required="true()" />
+            <bind nodeset="/data/relationshipToGroupHead" type="select1" />
+            <bind nodeset="/data/startDate" type="date" />
+        </model>
+    </h:head>
+    <h:body>
+        <input ref="/data/individualId">
+            <label ref="jr:itext('/data/individualId:label')" />
+            <hint ref="jr:itext('/data/individualId:hint')" />
+        </input>
+        <input ref="/data/socialGroupId">
+            <label ref="jr:itext('/data/socialGroupId:label')" />
+            <hint ref="jr:itext('/data/socialGroupId:hint')" />
+        </input>
+        <input ref="/data/fieldWorkerId">
+            <label ref="jr:itext('/data/fieldWorkerId:label')" />
+            <hint ref="jr:itext('/data/fieldWorkerId:hint')" />
+        </input>
+        <select1 ref="/data/relationshipToGroupHead">
+            <label ref="jr:itext('/data/relationshipToGroupHead:label')" />
+            <hint ref="jr:itext('/data/relationshipToGroupHead:hint')" />
+            <item>
+                <label ref="jr:itext('/data/relationshipToGroupHead:option0')" />
+                <value>1</value>
+            </item>
+            <item>
+                <label ref="jr:itext('/data/relationshipToGroupHead:option1')" />
+                <value>2</value>
+            </item>
+            <item>
+                <label ref="jr:itext('/data/relationshipToGroupHead:option2')" />
+                <value>3</value>
+            </item>
+            <item>
+                <label ref="jr:itext('/data/relationshipToGroupHead:option3')" />
+                <value>4</value>
+            </item>
+            <item>
+                <label ref="jr:itext('/data/relationshipToGroupHead:option4')" />
+                <value>5</value>
+            </item>
+            <item>
+                <label ref="jr:itext('/data/relationshipToGroupHead:option5')" />
+                <value>6</value>
+            </item>
+            <item>
+                <label ref="jr:itext('/data/relationshipToGroupHead:option6')" />
+                <value>7</value>
+            </item>
+            <item>
+                <label ref="jr:itext('/data/relationshipToGroupHead:option7')" />
+                <value>8</value>
+            </item>
+            <item>
+                <label ref="jr:itext('/data/relationshipToGroupHead:option8')" />
+                <value>9</value>
+            </item>
+        </select1>
+        <input ref="/data/startDate">
+            <label ref="jr:itext('/data/startDate:label')" />
+            <hint ref="jr:itext('/data/startDate:hint')" />
+        </input>
+    </h:body>
+</h:html>

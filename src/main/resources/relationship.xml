@@ -1,0 +1,114 @@
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:jr="http://openrosa.org/javarosa">
+    <h:head>
+        <h:title>Relationship</h:title>
+        <model>
+            <instance>
+                <data id="relationship">
+                    <individualA />
+                    <individualB />
+                    <fieldWorkerId />
+                    <relationshipType />
+                    <startDate />
+                </data>
+            </instance>
+            <itext>
+                <translation lang="eng">
+                    <text id="/data/individualA:label">
+                        <value>Individual A</value>
+                    </text>
+                    <text id="/data/individualA:hint">
+                        <value />
+                    </text>
+                    <text id="/data/individualB:label">
+                        <value>Individual B</value>
+                    </text>
+                    <text id="/data/individualB:hint">
+                        <value />
+                    </text>
+                    <text id="/data/fieldWorkerId:label">
+                        <value>Field Worker Id</value>
+                    </text>
+                    <text id="/data/fieldWorkerId:hint">
+                        <value />
+                    </text>
+                    <text id="/data/relationshipType:label">
+                        <value>Relationship Type</value>
+                    </text>
+                    <text id="/data/relationshipType:hint">
+                        <value />
+                    </text>
+                    <text id="/data/relationshipType:option0">
+                        <value>Never Married</value>
+                    </text>
+                    <text id="/data/relationshipType:option1">
+                        <value>Married</value>
+                    </text>
+                    <text id="/data/relationshipType:option2">
+                        <value>Separated/Divorced</value>
+                    </text>
+                    <text id="/data/relationshipType:option3">
+                        <value>Widowed</value>
+                    </text>
+                    <text id="/data/relationshipType:option4">
+                        <value>Living Together</value>
+                    </text>
+                    <text id="/data/startDate:label">
+                        <value>Start Date</value>
+                    </text>
+                    <text id="/data/startDate:hint">
+                        <value />
+                    </text>
+                </translation>
+            </itext>
+            <bind nodeset="/data/individualA" type="string" required="true()" />
+            <bind nodeset="/data/individualB" type="string" required="true()" />
+            <bind nodeset="/data/fieldWorkerId" type="string" required="true()" />
+            <bind nodeset="/data/relationshipType" type="select1" required="true()" />
+            <bind nodeset="/data/startDate" type="date" />
+        </model>
+    </h:head>
+    <h:body>
+        <input ref="/data/individualA">
+            <label ref="jr:itext('/data/individualA:label')" />
+            <hint ref="jr:itext('/data/individualA:hint')" />
+        </input>
+        <input ref="/data/individualB">
+            <label ref="jr:itext('/data/individualB:label')" />
+            <hint ref="jr:itext('/data/individualB:hint')" />
+        </input>
+        <input ref="/data/fieldWorkerId">
+            <label ref="jr:itext('/data/fieldWorkerId:label')" />
+            <hint ref="jr:itext('/data/fieldWorkerId:hint')" />
+        </input>
+        <select1 ref="/data/relationshipType">
+            <label ref="jr:itext('/data/relationshipType:label')" />
+            <hint ref="jr:itext('/data/relationshipType:hint')" />
+            <item>
+                <label ref="jr:itext('/data/relationshipType:option0')" />
+                <value>1</value>
+            </item>
+            <item>
+                <label ref="jr:itext('/data/relationshipType:option1')" />
+                <value>2</value>
+            </item>
+            <item>
+                <label ref="jr:itext('/data/relationshipType:option2')" />
+                <value>3</value>
+            </item>
+            <item>
+                <label ref="jr:itext('/data/relationshipType:option3')" />
+                <value>4</value>
+            </item>
+            <item>
+                <label ref="jr:itext('/data/relationshipType:option4')" />
+                <value>5</value>
+            </item>
+        </select1>
+        <input ref="/data/startDate">
+            <label ref="jr:itext('/data/startDate:label')" />
+            <hint ref="jr:itext('/data/startDate:hint')" />
+        </input>
+    </h:body>
+</h:html>

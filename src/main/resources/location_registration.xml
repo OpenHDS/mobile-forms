@@ -1,91 +1,93 @@
-<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
-  <h:head>
-    <h:title>Location Registration</h:title>
-    <model>
-      <instance>
-        <data id="build_Location-Registration_1352144706">
-          <village/>
-          <fieldWorkerId/>
-          <locationName/>
-          <locationType/>
-          <geopoint/>
-        </data>
-      </instance>
-      <itext>
-        <translation lang="eng">
-          <text id="/data/village:label">
-            <value>Village</value>
-          </text>
-          <text id="/data/village:hint">
-            <value/>
-          </text>
-          <text id="/data/fieldWorkerId:label">
-            <value>Field Worker Id</value>
-          </text>
-          <text id="/data/fieldWorkerId:hint">
-            <value/>
-          </text>
-          <text id="/data/locationName:label">
-            <value>Location Name</value>
-          </text>
-          <text id="/data/locationName:hint">
-            <value/>
-          </text>
-          <text id="/data/locationType:label">
-            <value>Location Type</value>
-          </text>
-          <text id="/data/locationType:hint">
-            <value/>
-          </text>
-          <text id="/data/locationType:option0">
-            <value>Rural</value>
-          </text>
-          <text id="/data/locationType:option1">
-            <value>Urban</value>
-          </text>
-          <text id="/data/geopoint:label">
-            <value>Geopoint</value>
-          </text>
-          <text id="/data/geopoint:hint">
-            <value/>
-          </text>
-        </translation>
-      </itext>
-      <bind nodeset="/data/village" type="string" required="true()"/>
-      <bind nodeset="/data/fieldWorkerId" type="string" required="true()"/>
-      <bind nodeset="/data/locationName" type="string" required="true()"/>
-      <bind nodeset="/data/locationType" type="select1" required="true()"/>
-      <bind nodeset="/data/geopoint" type="geopoint"/>
-    </model>
-  </h:head>
-  <h:body>
-    <input ref="/data/village">
-      <label ref="jr:itext('/data/village:label')"/>
-      <hint ref="jr:itext('/data/village:hint')"/>
-    </input>
-    <input ref="/data/fieldWorkerId">
-      <label ref="jr:itext('/data/fieldWorkerId:label')"/>
-      <hint ref="jr:itext('/data/fieldWorkerId:hint')"/>
-    </input>
-    <input ref="/data/locationName">
-      <label ref="jr:itext('/data/locationName:label')"/>
-      <hint ref="jr:itext('/data/locationName:hint')"/>
-    </input>
-    <select1 ref="/data/locationType">
-      <label ref="jr:itext('/data/locationType:label')"/>
-      <hint ref="jr:itext('/data/locationType:hint')"/>
-      <item>
-        <label ref="jr:itext('/data/locationType:option0')"/>
-        <value>RUR</value>
-      </item>
-      <item>
-        <label ref="jr:itext('/data/locationType:option1')"/>
-        <value>URB</value>
-      </item>
-    </select1>
-    <input ref="/data/geopoint">
-      <label ref="jr:itext('/data/geopoint:label')"/>
-      <hint ref="jr:itext('/data/geopoint:hint')"/>
-    </input>
-  </h:body>
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:jr="http://openrosa.org/javarosa">
+    <h:head>
+        <h:title>Location Registration</h:title>
+        <model>
+            <instance>
+                <data id="location_registration">
+                    <village />
+                    <fieldWorkerId />
+                    <locationName />
+                    <locationType />
+                    <geopoint />
+                </data>
+            </instance>
+            <itext>
+                <translation lang="eng">
+                    <text id="/data/village:label">
+                        <value>Village</value>
+                    </text>
+                    <text id="/data/village:hint">
+                        <value />
+                    </text>
+                    <text id="/data/fieldWorkerId:label">
+                        <value>Field Worker Id</value>
+                    </text>
+                    <text id="/data/fieldWorkerId:hint">
+                        <value />
+                    </text>
+                    <text id="/data/locationName:label">
+                        <value>Location Name</value>
+                    </text>
+                    <text id="/data/locationName:hint">
+                        <value />
+                    </text>
+                    <text id="/data/locationType:label">
+                        <value>Location Type</value>
+                    </text>
+                    <text id="/data/locationType:hint">
+                        <value />
+                    </text>
+                    <text id="/data/locationType:option0">
+                        <value>Rural</value>
+                    </text>
+                    <text id="/data/locationType:option1">
+                        <value>Urban</value>
+                    </text>
+                    <text id="/data/geopoint:label">
+                        <value>Geopoint</value>
+                    </text>
+                    <text id="/data/geopoint:hint">
+                        <value />
+                    </text>
+                </translation>
+            </itext>
+            <bind nodeset="/data/village" type="string" required="true()" />
+            <bind nodeset="/data/fieldWorkerId" type="string" required="true()" />
+            <bind nodeset="/data/locationName" type="string" required="true()" />
+            <bind nodeset="/data/locationType" type="select1" required="true()" />
+            <bind nodeset="/data/geopoint" type="geopoint" />
+        </model>
+    </h:head>
+    <h:body>
+        <input ref="/data/village">
+            <label ref="jr:itext('/data/village:label')" />
+            <hint ref="jr:itext('/data/village:hint')" />
+        </input>
+        <input ref="/data/fieldWorkerId">
+            <label ref="jr:itext('/data/fieldWorkerId:label')" />
+            <hint ref="jr:itext('/data/fieldWorkerId:hint')" />
+        </input>
+        <input ref="/data/locationName">
+            <label ref="jr:itext('/data/locationName:label')" />
+            <hint ref="jr:itext('/data/locationName:hint')" />
+        </input>
+        <select1 ref="/data/locationType">
+            <label ref="jr:itext('/data/locationType:label')" />
+            <hint ref="jr:itext('/data/locationType:hint')" />
+            <item>
+                <label ref="jr:itext('/data/locationType:option0')" />
+                <value>RUR</value>
+            </item>
+            <item>
+                <label ref="jr:itext('/data/locationType:option1')" />
+                <value>URB</value>
+            </item>
+        </select1>
+        <input ref="/data/geopoint">
+            <label ref="jr:itext('/data/geopoint:label')" />
+            <hint ref="jr:itext('/data/geopoint:hint')" />
+        </input>
+    </h:body>
 </h:html>

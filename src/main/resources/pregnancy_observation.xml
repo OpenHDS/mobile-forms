@@ -1,0 +1,80 @@
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:jr="http://openrosa.org/javarosa">
+    <h:head>
+        <h:title>Pregnancy Observation</h:title>
+        <model>
+            <instance>
+                <data id="pregnancy_observation">
+                    <individualId />
+                    <fieldWorkerId />
+                    <visitId />
+                    <expectedDeliveryDate />
+                    <recordedDate />
+                </data>
+            </instance>
+            <itext>
+                <translation lang="eng">
+                    <text id="/data/individualId:label">
+                        <value>Mother Id</value>
+                    </text>
+                    <text id="/data/individualId:hint">
+                        <value />
+                    </text>
+                    <text id="/data/fieldWorkerId:label">
+                        <value>Field Worker Id</value>
+                    </text>
+                    <text id="/data/fieldWorkerId:hint">
+                        <value />
+                    </text>
+                    <text id="/data/visitId:label">
+                        <value>Visit Id</value>
+                    </text>
+                    <text id="/data/visitId:hint">
+                        <value />
+                    </text>
+                    <text id="/data/expectedDeliveryDate:label">
+                        <value>Expected Delivery Date</value>
+                    </text>
+                    <text id="/data/expectedDeliveryDate:hint">
+                        <value />
+                    </text>
+                    <text id="/data/recordedDate:label">
+                        <value>Recorded Date</value>
+                    </text>
+                    <text id="/data/recordedDate:hint">
+                        <value />
+                    </text>
+                </translation>
+            </itext>
+            <bind nodeset="/data/individualId" type="string" required="true()" />
+            <bind nodeset="/data/fieldWorkerId" type="string" required="true()" />
+            <bind nodeset="/data/visitId" type="string" required="true()" />
+            <bind nodeset="/data/expectedDeliveryDate" type="date"
+                required="true()" />
+            <bind nodeset="/data/recordedDate" type="date" required="true()" />
+        </model>
+    </h:head>
+    <h:body>
+        <input ref="/data/individualId">
+            <label ref="jr:itext('/data/individualId:label')" />
+            <hint ref="jr:itext('/data/individualId:hint')" />
+        </input>
+        <input ref="/data/fieldWorkerId">
+            <label ref="jr:itext('/data/fieldWorkerId:label')" />
+            <hint ref="jr:itext('/data/fieldWorkerId:hint')" />
+        </input>
+        <input ref="/data/visitId">
+            <label ref="jr:itext('/data/visitId:label')" />
+            <hint ref="jr:itext('/data/visitId:hint')" />
+        </input>
+        <input ref="/data/expectedDeliveryDate">
+            <label ref="jr:itext('/data/expectedDeliveryDate:label')" />
+            <hint ref="jr:itext('/data/expectedDeliveryDate:hint')" />
+        </input>
+        <input ref="/data/recordedDate">
+            <label ref="jr:itext('/data/recordedDate:label')" />
+            <hint ref="jr:itext('/data/recordedDate:hint')" />
+        </input>
+    </h:body>
+</h:html>
