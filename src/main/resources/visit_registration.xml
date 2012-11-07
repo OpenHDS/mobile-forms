@@ -49,7 +49,7 @@
             <bind nodeset="/data/visitId" type="string" required="true()" />
             <bind nodeset="/data/fieldWorkerId" type="string" required="true()" />
             <bind nodeset="/data/locationId" type="string" required="true()" />
-            <bind nodeset="/data/roundNumber" type="int" required="true()" constraint="(. &gt; 1 and . &lt; 20)" />
+            <bind nodeset="/data/roundNumber" type="int" required="true()" constraint="(. &gt;= 1 and . &lt; 20)" />
             <bind nodeset="/data/visitDate" type="date" required="true()" />
         </model>
     </h:head>

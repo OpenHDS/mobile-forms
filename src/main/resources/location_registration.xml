@@ -1,13 +1,13 @@
-<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:h="http://www.w3.org/1999/xhtml"
-    xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-    xmlns:jr="http://openrosa.org/javarosa">
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
     <h:head>
         <h:title>Location Registration</h:title>
         <model>
             <instance>
                 <data id="location_registration">
-                    <village />
+                    <hierarchyId />
                     <fieldWorkerId />
+                    <locationId />
                     <locationName />
                     <locationType />
                     <geopoint />
@@ -15,16 +15,22 @@
             </instance>
             <itext>
                 <translation lang="eng">
-                    <text id="/data/village:label">
+                    <text id="/data/hierarchyId:label">
                         <value>Village</value>
                     </text>
-                    <text id="/data/village:hint">
+                    <text id="/data/hierarchyId:hint">
                         <value />
                     </text>
                     <text id="/data/fieldWorkerId:label">
                         <value>Field Worker Id</value>
                     </text>
                     <text id="/data/fieldWorkerId:hint">
+                        <value />
+                    </text>
+                    <text id="/data/locationId:label">
+                        <value>Location Id</value>
+                    </text>
+                    <text id="/data/locationId:hint">
                         <value />
                     </text>
                     <text id="/data/locationName:label">
@@ -53,21 +59,26 @@
                     </text>
                 </translation>
             </itext>
-            <bind nodeset="/data/village" type="string" required="true()" />
+            <bind nodeset="/data/hierarchyId" type="string" required="true()" />
             <bind nodeset="/data/fieldWorkerId" type="string" required="true()" />
+            <bind nodeset="/data/locationId" type="string" required="true()" />
             <bind nodeset="/data/locationName" type="string" required="true()" />
             <bind nodeset="/data/locationType" type="select1" required="true()" />
             <bind nodeset="/data/geopoint" type="geopoint" />
         </model>
     </h:head>
     <h:body>
-        <input ref="/data/village">
-            <label ref="jr:itext('/data/village:label')" />
-            <hint ref="jr:itext('/data/village:hint')" />
+        <input ref="/data/hierarchyId">
+            <label ref="jr:itext('/data/hierarchyId:label')" />
+            <hint ref="jr:itext('/data/hierarchyId:hint')" />
         </input>
         <input ref="/data/fieldWorkerId">
             <label ref="jr:itext('/data/fieldWorkerId:label')" />
             <hint ref="jr:itext('/data/fieldWorkerId:hint')" />
+        </input>
+        <input ref="/data/locationId">
+            <label ref="jr:itext('/data/locationId:label')" />
+            <hint ref="jr:itext('/data/locationId:hint')" />
         </input>
         <input ref="/data/locationName">
             <label ref="jr:itext('/data/locationName:label')" />
