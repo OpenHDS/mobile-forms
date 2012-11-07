@@ -5,6 +5,7 @@
         <model>
             <instance>
                 <data id="visit_registration">
+                    <processedByMirth />
                     <visitId />
                     <fieldWorkerId />
                     <locationId />
@@ -46,6 +47,7 @@
                     </text>
                 </translation>
             </itext>
+            <bind nodeset="/data/processedByMirth" type="boolean" />
             <bind nodeset="/data/visitId" type="string" required="true()" />
             <bind nodeset="/data/fieldWorkerId" type="string" required="true()" />
             <bind nodeset="/data/locationId" type="string" required="true()" />
