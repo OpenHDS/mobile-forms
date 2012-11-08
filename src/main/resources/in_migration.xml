@@ -5,6 +5,8 @@
         <model>
             <instance>
                 <data id="in_migration">
+                    <processedByMirth />
+                    <migrationType />
                     <locationId />
                     <visitId />
                     <fieldWorkerId />
@@ -126,17 +128,26 @@
                     </text>
                 </translation>
             </itext>
+            <bind nodeset="/data/processedByMirth" type="boolean" required="true()" />
+            <bind nodeset="/data/migrationType" type="string" required="true()" />
             <bind nodeset="/data/locationId" type="string" required="true()" />
             <bind nodeset="/data/visitId" type="string" required="true()" />
             <bind nodeset="/data/fieldWorkerId" type="string" required="true()" />
             <bind nodeset="/data/individualInfo/individualId" type="string" required="true()" />
-            <bind nodeset="/data/individualInfo/motherId" type="string" required="true()" />
-            <bind nodeset="/data/individualInfo/fatherId" type="string" required="true()" />
-            <bind nodeset="/data/individualInfo/firstName" type="string" required="true()" />
-            <bind nodeset="/data/individualInfo/lastName" type="string" required="true()" />
-            <bind nodeset="/data/individualInfo/gender" type="select1" required="true()" />
-            <bind nodeset="/data/individualInfo/dateOfBirth" type="date" required="true()" />
-            <bind nodeset="/data/individualInfo/partialDate" type="select1" required="true()" />
+            <bind nodeset="/data/individualInfo/motherId" relevant="/data/migrationType = 'EXTERNAL_INMIGRATION'"
+                type="string" required="true()" />
+            <bind nodeset="/data/individualInfo/fatherId" relevant="/data/migrationType = 'EXTERNAL_INMIGRATION'"
+                type="string" required="true()" />
+            <bind nodeset="/data/individualInfo/firstName" relevant="/data/migrationType = 'EXTERNAL_INMIGRATION'"
+                type="string" required="true()" />
+            <bind nodeset="/data/individualInfo/lastName" relevant="/data/migrationType = 'EXTERNAL_INMIGRATION'"
+                type="string" required="true()" />
+            <bind nodeset="/data/individualInfo/gender" relevant="/data/migrationType = 'EXTERNAL_INMIGRATION'"
+                type="select1" required="true()" />
+            <bind nodeset="/data/individualInfo/dateOfBirth" relevant="/data/migrationType = 'EXTERNAL_INMIGRATION'"
+                type="date" required="true()" />
+            <bind nodeset="/data/individualInfo/partialDate" relevant="/data/migrationType = 'EXTERNAL_INMIGRATION'"
+                type="select1" required="true()" />
             <bind nodeset="/data/dateOfMigration" type="date" required="true()" />
             <bind nodeset="/data/origin" type="string" required="true()" />
             <bind nodeset="/data/reason" type="string" required="true()" />
