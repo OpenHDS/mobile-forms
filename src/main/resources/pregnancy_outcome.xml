@@ -12,6 +12,7 @@
                     <recordedDate />
                     <outcomes jr:template="">
                         <outcomeType />
+                        <childId />
                         <firstName />
                         <lastName />
                         <gender />
@@ -57,12 +58,7 @@
                     <text id="/data/outcomes:label">
                         <value>Outcomes</value>
                     </text>
-                    <text id="/data/outcomes/outcomeType:label">
-                        <value>Outcome Type</value>
-                    </text>
-                    <text id="/data/outcomes/outcomeType:hint">
-                        <value />
-                    </text>
+
                     <text id="/data/outcomes/outcomeType:option0">
                         <value>Live Birth</value>
                     </text>
@@ -74,6 +70,12 @@
                     </text>
                     <text id="/data/outcomes/outcomeType:option3">
                         <value>Abortion</value>
+                    </text>
+                    <text id="/data/outcomes/childId:label">
+                        <value>Child Id</value>
+                    </text>
+                    <text id="/data/outcomes/childId:hint">
+                        <value />
                     </text>
                     <text id="/data/outcomes/firstName:label">
                         <value>First Name</value>
@@ -164,13 +166,21 @@
             <bind nodeset="/data/fieldWorkerId" type="string" />
             <bind nodeset="/data/recordedDate" type="date" required="true()" />
             <bind nodeset="/data/outcomes/outcomeType" type="select1" required="true()" />
-            <bind nodeset="/data/outcomes/firstName" type="string" required="true()" />
-            <bind nodeset="/data/outcomes/lastName" type="string" required="true()" />
-            <bind nodeset="/data/outcomes/gender" type="select1" required="true()" />
-            <bind nodeset="/data/outcomes/dateOfBirth" type="date" required="true()" />
-            <bind nodeset="/data/outcomes/partialDate" type="select1" required="true()" />
-            <bind nodeset="/data/outcomes/socialGroupId" type="string" required="true()" />
-            <bind nodeset="/data/outcomes/relationshipToGroupHead" type="select1" />
+            <bind nodeset="/data/outcomes/childId" type="string" required="true()" />
+            <bind nodeset="/data/outcomes/firstName" relevant="/data/outcomes/outcomeType = 'LBR'" type="string"
+                required="true()" />
+            <bind nodeset="/data/outcomes/lastName" relevant="/data/outcomes/outcomeType = 'LBR'" type="string"
+                required="true()" />
+            <bind nodeset="/data/outcomes/gender" relevant="/data/outcomes/outcomeType = 'LBR'" type="select1"
+                required="true()" />
+            <bind nodeset="/data/outcomes/dateOfBirth" relevant="/data/outcomes/outcomeType = 'LBR'" type="date"
+                required="true()" />
+            <bind nodeset="/data/outcomes/partialDate" relevant="/data/outcomes/outcomeType = 'LBR'" type="select1"
+                required="true()" />
+            <bind nodeset="/data/outcomes/socialGroupId" relevant="/data/outcomes/outcomeType = 'LBR'" type="string"
+                required="true()" />
+            <bind nodeset="/data/outcomes/relationshipToGroupHead" relevant="/data/outcomes/outcomeType = 'LBR'"
+                type="select1" />
         </model>
     </h:head>
     <h:body>
@@ -217,6 +227,10 @@
                         <value>ABT</value>
                     </item>
                 </select1>
+                <input ref="/data/outcomes/childId">
+                    <label ref="jr:itext('/data/outcomes/childId:label')" />
+                    <hint ref="jr:itext('/data/outcomes/childId:hint')" />
+                </input>
                 <input ref="/data/outcomes/firstName">
                     <label ref="jr:itext('/data/outcomes/firstName:label')" />
                     <hint ref="jr:itext('/data/outcomes/firstName:hint')" />
