@@ -1,11 +1,11 @@
-<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:h="http://www.w3.org/1999/xhtml"
-    xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-    xmlns:jr="http://openrosa.org/javarosa">
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
     <h:head>
         <h:title>Out Migration Registration</h:title>
         <model>
             <instance>
                 <data id="out_migration_registration">
+                    <processedByMirth />
                     <individualId />
                     <fieldWorkerId />
                     <visitId />
@@ -54,13 +54,13 @@
                     </text>
                 </translation>
             </itext>
+            <bind nodeset="/data/processedByMirth" type="boolean" />
             <bind nodeset="/data/individualId" type="string" required="true()" />
             <bind nodeset="/data/fieldWorkerId" type="string" required="true()" />
             <bind nodeset="/data/visitId" type="string" required="true()" />
             <bind nodeset="/data/dateOfMigration" type="date" />
             <bind nodeset="/data/nameOfDestination" type="string" required="true()" />
-            <bind nodeset="/data/reasonForOutMigration" type="string"
-                required="true()" />
+            <bind nodeset="/data/reasonForOutMigration" type="string" required="true()" />
         </model>
     </h:head>
     <h:body>

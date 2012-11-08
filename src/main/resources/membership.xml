@@ -1,13 +1,13 @@
-<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:h="http://www.w3.org/1999/xhtml"
-    xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-    xmlns:jr="http://openrosa.org/javarosa">
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
     <h:head>
         <h:title>Membership</h:title>
         <model>
             <instance>
                 <data id="membership">
+                    <processedByMirth />
                     <individualId />
-                    <socialGroupId />
+                    <householdId />
                     <fieldWorkerId />
                     <relationshipToGroupHead />
                     <startDate />
@@ -21,10 +21,10 @@
                     <text id="/data/individualId:hint">
                         <value />
                     </text>
-                    <text id="/data/socialGroupId:label">
+                    <text id="/data/householdId:label">
                         <value>Social Group Id</value>
                     </text>
-                    <text id="/data/socialGroupId:hint">
+                    <text id="/data/householdId:hint">
                         <value></value>
                     </text>
                     <text id="/data/fieldWorkerId:label">
@@ -74,8 +74,9 @@
                     </text>
                 </translation>
             </itext>
+            <bind nodeset="/data/processedByMirth" type="boolean" />
             <bind nodeset="/data/individualId" type="string" required="true()" />
-            <bind nodeset="/data/socialGroupId" type="string" required="true()" />
+            <bind nodeset="/data/householdId" type="string" required="true()" />
             <bind nodeset="/data/fieldWorkerId" type="string" required="true()" />
             <bind nodeset="/data/relationshipToGroupHead" type="select1" />
             <bind nodeset="/data/startDate" type="date" />
@@ -86,9 +87,9 @@
             <label ref="jr:itext('/data/individualId:label')" />
             <hint ref="jr:itext('/data/individualId:hint')" />
         </input>
-        <input ref="/data/socialGroupId">
-            <label ref="jr:itext('/data/socialGroupId:label')" />
-            <hint ref="jr:itext('/data/socialGroupId:hint')" />
+        <input ref="/data/householdId">
+            <label ref="jr:itext('/data/householdId:label')" />
+            <hint ref="jr:itext('/data/householdId:hint')" />
         </input>
         <input ref="/data/fieldWorkerId">
             <label ref="jr:itext('/data/fieldWorkerId:label')" />
