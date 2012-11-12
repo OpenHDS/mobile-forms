@@ -4,23 +4,23 @@
         <h:title>Pregnancy Outcome</h:title>
         <model>
             <instance>
-                <data id="build_Pregnancy-Outcome_1352159451">
+                <data id="pregnancy_outcome">
+                    <processedByMirth />
                     <motherId />
                     <fatherId />
                     <visitId />
                     <fieldWorkerId />
-                    <recordedDate />
                     <outcomes jr:template="">
                         <outcomeType />
                         <childId />
+                        <socialGroupId />
                         <firstName />
                         <lastName />
                         <gender />
-                        <dateOfBirth />
                         <partialDate />
-                        <socialGroupId />
                         <relationshipToGroupHead />
                     </outcomes>
+                    <recordedDate />
                 </data>
             </instance>
             <itext>
@@ -58,7 +58,12 @@
                     <text id="/data/outcomes:label">
                         <value>Outcomes</value>
                     </text>
-
+                    <text id="/data/outcomes/outcomeType:label">
+                        <value>Outcome Type</value>
+                    </text>
+                    <text id="/data/outcomes/outcomeType:hint">
+                        <value />
+                    </text>
                     <text id="/data/outcomes/outcomeType:option0">
                         <value>Live Birth</value>
                     </text>
@@ -100,12 +105,6 @@
                     </text>
                     <text id="/data/outcomes/gender:option1">
                         <value>Female</value>
-                    </text>
-                    <text id="/data/outcomes/dateOfBirth:label">
-                        <value>Date of Birth</value>
-                    </text>
-                    <text id="/data/outcomes/dateOfBirth:hint">
-                        <value />
                     </text>
                     <text id="/data/outcomes/partialDate:label">
                         <value>Partial Date</value>
@@ -160,20 +159,20 @@
                     </text>
                 </translation>
             </itext>
+            <bind nodeset="/data/processedByMirth" type="boolean" required="true()" />
             <bind nodeset="/data/motherId" type="string" required="true()" />
             <bind nodeset="/data/fatherId" type="string" required="true()" />
             <bind nodeset="/data/visitId" type="string" required="true()" />
             <bind nodeset="/data/fieldWorkerId" type="string" />
             <bind nodeset="/data/recordedDate" type="date" required="true()" />
             <bind nodeset="/data/outcomes/outcomeType" type="select1" required="true()" />
-            <bind nodeset="/data/outcomes/childId" type="string" required="true()" />
+            <bind nodeset="/data/outcomes/childId" relevant="/data/outcomes/outcomeType = 'LBR'" type="string"
+                required="true()" />
             <bind nodeset="/data/outcomes/firstName" relevant="/data/outcomes/outcomeType = 'LBR'" type="string"
                 required="true()" />
             <bind nodeset="/data/outcomes/lastName" relevant="/data/outcomes/outcomeType = 'LBR'" type="string"
                 required="true()" />
             <bind nodeset="/data/outcomes/gender" relevant="/data/outcomes/outcomeType = 'LBR'" type="select1"
-                required="true()" />
-            <bind nodeset="/data/outcomes/dateOfBirth" relevant="/data/outcomes/outcomeType = 'LBR'" type="date"
                 required="true()" />
             <bind nodeset="/data/outcomes/partialDate" relevant="/data/outcomes/outcomeType = 'LBR'" type="select1"
                 required="true()" />
@@ -251,10 +250,6 @@
                         <value>F</value>
                     </item>
                 </select1>
-                <input ref="/data/outcomes/dateOfBirth">
-                    <label ref="jr:itext('/data/outcomes/dateOfBirth:label')" />
-                    <hint ref="jr:itext('/data/outcomes/dateOfBirth:hint')" />
-                </input>
                 <select1 ref="/data/outcomes/partialDate">
                     <label ref="jr:itext('/data/outcomes/partialDate:label')" />
                     <hint ref="jr:itext('/data/outcomes/partialDate:hint')" />
