@@ -6,6 +6,36 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>XForm Definition XML Files</name>
+
+    <repositories>
+        <repository>
+            <id>openhds-repo</id>
+            <name>OpenHDS Repository</name>
+            <url>http://openhds.rcg.usm.maine.edu/nexus/content/groups/public/</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <uniqueVersion>false</uniqueVersion>
+            <id>nexus</id>
+            <name>OpenHDS Release Repository</name>
+            <url>http://openhds.rcg.usm.maine.edu/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <uniqueVersion>true</uniqueVersion>
+            <id>nexus</id>
+            <name>OpenHDS Snapshot Repository</name>
+            <url>http://openhds.rcg.usm.maine.edu/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <scm>
+        <connection>scm:git:https://code.google.com/p/openhds.mobile-forms/</connection>
+        <developerConnection>scm:git:https://code.google.com/p/openhds.mobile-forms/</developerConnection>
+        <url>http://code.google.com/p/openhds/source/browse/?repo=mobile-forms</url>
+        <tag>HEAD</tag>
+    </scm>
     
     <build>
         <plugins>
